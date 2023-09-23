@@ -14,7 +14,7 @@ public class ClienteRepositoryImpl extends RepositoryImpl<Cliente,Long> implemen
     @Override
     public void add(Cliente entity) {
         context.getTransaction().begin();
-        context.persist(entity);
+        context.merge(entity);
         context.getTransaction().commit();
     }
 

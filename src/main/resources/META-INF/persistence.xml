@@ -4,9 +4,15 @@
              version="2.0">
     <persistence-unit name="empresa" transaction-type="RESOURCE_LOCAL">
         <class>Empresa.entities.Cliente</class>
+
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:sqlite:base.db" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/empresa" />
+            <property name="hibernate.connection.username" value="reveliox" />
+            <property name="hibernate.connection.password" value="luciana" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.show_sql" value="true" />
         </properties>
     </persistence-unit>
 </persistence>

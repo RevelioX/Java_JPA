@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "clientes")
 public class Cliente {
-    @Basic
+    @Column(name = "numero_telefono")
     private String numeroTelefono;
     @Basic
     private String nombre;

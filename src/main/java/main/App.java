@@ -18,9 +18,9 @@ public class App {
         Cliente cliente2 = new Cliente("+54 9 3572 40 5566", "Roberto", "Ton",(long)2);
         Cliente cliente3 = new Cliente("+54 9 3572 40 8899", "Nier", "Arveja",(long)3);
 
-        clienteRepository.add(cliente1);
-        clienteRepository.add(cliente2);
-        clienteRepository.add(cliente3);
+        //clienteRepository.add(cliente1);
+        //clienteRepository.add(cliente2);
+        //clienteRepository.add(cliente3);
 
 
     }
