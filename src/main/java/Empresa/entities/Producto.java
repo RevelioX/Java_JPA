@@ -1,23 +1,22 @@
 package Empresa.entities;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "producto")
 public class Producto {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+
     @Basic
     private String nombre;
     @Basic
     private double precio;
 
-    public Producto(Long id, String nombre, double precio) {
-        this.id = id;
+    public Producto( String nombre, double precio) {
         this.nombre = nombre;
         this.precio = precio;
     }
@@ -29,6 +28,15 @@ public class Producto {
     public Long getId() {
         return id;
     }
+
+    public String toString() {
+        return "Producto{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", precio=" + precio +
+                '}';
+    }
+
 
     public void setId(Long id) {
         this.id = id;

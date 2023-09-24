@@ -1,9 +1,16 @@
 package main;
 
 import Empresa.entities.Cliente;
+import Empresa.entities.Producto;
+import Empresa.entities.Venta;
 import Empresa.implementations.ClienteRepositoryImpl;
+import Empresa.implementations.ProductoRepositoryImpl;
+import Empresa.implementations.VentaRepositoryImpl;
 import Empresa.interfaces.ClienteRepository;
+import Empresa.interfaces.ProductoRepository;
+import Empresa.interfaces.VentaRepository;
 
+import javax.sound.midi.Soundbank;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -13,15 +20,19 @@ import java.util.List;
 public class App {
     public static <Clientes> void main(String[] args) {
         ClienteRepository clienteRepository = new ClienteRepositoryImpl();
-
-        Cliente cliente1 = new Cliente("+54 9 3572 40 1327", "Mariano", "Brarda",(long)1);
-        Cliente cliente2 = new Cliente("+54 9 3572 40 5566", "Roberto", "Ton",(long)2);
-        Cliente cliente3 = new Cliente("+54 9 3572 40 8899", "Nier", "Arveja",(long)3);
-
-        //clienteRepository.add(cliente1);
-        //clienteRepository.add(cliente2);
-        //clienteRepository.add(cliente3);
+        VentaRepository ventaRepository = new VentaRepositoryImpl();
+        ProductoRepository productoRepository = new ProductoRepositoryImpl();
 
 
+        Cliente Mariano = clienteRepository.findBy((long)2);
+
+        Producto Luciana = productoRepository.findBy((long)12);
+        Producto zapallino = productoRepository.findBy((long)2);
+
+        Venta venta1 = new Venta(Mariano);
+        venta1.añadirProducto(Luciana);
+        venta1.añadirProducto(zapallino);
+
+        ventaRepository.add(venta1);
     }
 }

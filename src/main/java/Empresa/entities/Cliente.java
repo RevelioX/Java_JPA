@@ -16,14 +16,23 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "numeroTelefono='" + numeroTelefono + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", id=" + id +
+                '}';
+    }
+
     public Cliente(){
 
     }
-    public Cliente(String numeroTelefono, String nombre, String apellido,Long id) {
+    public Cliente(String numeroTelefono, String nombre, String apellido) {
         this.numeroTelefono = numeroTelefono;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.id = id;
     }
 
     public String getNumeroTelefono() {

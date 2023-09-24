@@ -4,6 +4,8 @@
              version="2.0">
     <persistence-unit name="empresa" transaction-type="RESOURCE_LOCAL">
         <class>Empresa.entities.Cliente</class>
+        <class>Empresa.entities.Venta</class>
+        <class>Empresa.entities.Producto</class>
 
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
